@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <!-- things we create display here -->
+    <div class="js-container"></div>
+    <!-- load react external lib -->
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <!-- javascript compiler -->
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <!-- jsx -> js -->
+    <script type="text/babel">
+      // jsx
+      const button = <button>Hello</button>;
+      const paragraph = <p>Lorem, ipsum dolor.</p>;
+
+      const div = (
+        <div>
+          <button>hello</button>
+          <p>Lorem, ipsum dolor.</p>
+        </div>
+      );
+
+      // get html elm put in javascript
+      // combine html and js code
+      const container = document.querySelector(".js-container");
+      // setup react, render = display
+      //   everything we create go here
+      ReactDOM.createRoot(container).render(div);
+    </script>
+  </body>
+</html>
