@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="reset.css" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <!-- things we create display here -->
+        <div class="js-container"></div>
+        <!-- load react external lib -->
+        <script src="https://unpkg.com/supersimpledev/react.js"></script>
+        <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+        <!-- javascript compiler -->
+        <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+        <script type="text/babel">
+            function App() {
+                return (
+                    <div className="app-container">
+                        <Sidebar />
+                    </div>
+                );
+            }
+            const container = document.querySelector(".js-container");
+            const root = ReactDOM.createRoot(container);
+            root.render(<App />);
+        </script>
+    </body>
+</html>

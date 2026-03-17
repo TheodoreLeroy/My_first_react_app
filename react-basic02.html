@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home work 4</title>
+        <style>
+            body {
+                font-family: Arial;
+            }
+            .on-btn {
+                background-color: rgb(25, 135, 84);
+                border-width: 0;
+                padding: 10px 15px;
+                border-radius: 5px;
+                color: white;
+                cursor: pointer;
+            }
+            .off-btn {
+                background-color: rgb(220, 53, 69);
+                border-width: 0;
+                padding: 10px 15px;
+                border-radius: 5px;
+                color: white;
+                cursor: pointer;
+            }
+            #email__input-form {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+            }
+            .input-item {
+                padding: 10px 15px;
+                margin-bottom: 10px;
+                border-width: 1px;
+                border-radius: 5px;
+                width: 200px;
+            }
+            .btn {
+                padding: 10px 15px;
+                color: white;
+                background-color: rgb(0, 123, 255);
+                border-width: 0;
+                border-radius: 5px;
+                margin-right: 5px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- things we create display here -->
+        <div class="js-container"></div>
+        <!-- load react external lib -->
+        <script src="https://unpkg.com/supersimpledev/react.js"></script>
+        <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+        <!-- javascript compiler -->
+        <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+        <!-- chatbot -->
+        <script src="https://unpkg.com/supersimpledev/chatbot.js"></script>
+
+        <script type="text/babel">
+            // components
+            function EmailInput() {
+                const [showPassword, setShowPassword] = React.useState(false);
+
+                function handleShowPassword() {
+                    setShowPassword(!showPassword);
+                }
+
+                return (
+                    <>
+                        <div className="email-container">
+                            <form id="email__input-form">
+                                <input
+                                    type="text"
+                                    placeholder="Email"
+                                    className="input-item"
+                                />
+                                <input
+                                    type={showPassword ? "text" : "password"}
+                                    placeholder="Password"
+                                    className="input-item"
+                                />
+                                <button
+                                    type="button"
+                                    onClick={handleShowPassword}
+                                >
+                                    Show
+                                </button>
+                            </form>
+                        </div>
+                    </>
+                );
+            }
+
+            // components
+            function Button(text) {
+                return (
+                    <>
+                        <button className="btn">{text.value}</button>
+                    </>
+                );
+            }
+
+            function App() {
+                return (
+                    <>
+                        <h2>Hello, welcome to my website</h2>
+                        <EmailInput />
+                        <Button value="Login" />
+                        <Button value="Sign up" />
+                    </>
+                );
+            }
+
+            const container = document.querySelector(".js-container");
+            const root = ReactDOM.createRoot(container);
+            root.render(<App />);
+        </script>
+    </body>
+</html>
